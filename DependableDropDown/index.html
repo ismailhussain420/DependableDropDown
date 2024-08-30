@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depandable Dropdown</title>
+    <style>
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 1px 2px 3px #00807a;
+          
+           
+}
+h1:hover{
+    color:#00807a;
+    transition: all 2s;
+
+}
+        .container{
+            text-align: center;
+            padding:10px;
+            height: 700px;
+
+        }
+
+        select{
+            width: 29%;
+            padding: 10px;
+            box-shadow: 4px 6px 3px lightgray;
+            border-radius: 12px;
+            margin:10px;
+            border:none;
+            background-color: #00807a;
+            color:#fff
+        }
+        select:hover{
+            background-color: #fff;
+            transition: all 1s;
+   
+            color:#00807a;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Depandable Dropdown</h1>
+        <select name="" id="country" onchange="change()">
+
+            <option >Choose Country </option>
+            <option >Bangladesh </option>
+            <option >India </option>
+            <option >Pakistan </option>
+        </select>
+        <div class="city" id="select">
+            <select name="" id="">
+                <option value="">City</option>
+            </select>
+
+        </div>
+    </div>
+    <script>
+        function change(){
+            var country = document.getElementById("country").value;
+            
+            var city =[];
+
+
+            if(country == "Bangladesh"){
+
+                city =["Sylhet","Dhaka","Rajsahi"];
+
+            }else if(country == "India"){
+                city =['Dilli','Kolkata'];
+
+
+            }else if(country == "Pakistan"){
+                city =['Islamabad','Lahor'];
+
+
+            }
+            
+        var options = "";
+    
+            for(var i =0 ; i<city.length;i++){
+
+           options =options + "<option>"+city[i]+"</option>";
+           
+
+           console.log(options);
+         
+           
+        }
+
+
+        var dropdown ="<select>"+options+"</select>";
+        console.log(dropdown);
+        var select =document.getElementById("select");
+        select.innerHTML = dropdown;
+
+
+        }
+
+
+
+      
+    </script>
+
+
+
+</body>
+</html>
